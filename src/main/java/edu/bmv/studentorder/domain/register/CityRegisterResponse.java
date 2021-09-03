@@ -1,30 +1,30 @@
 package edu.bmv.studentorder.domain.register;
 
 public class CityRegisterResponse {
-    private boolean existing;
-    private Boolean temporary ;
+    private boolean registered;
+    private boolean temporal;
 
-    public boolean isExisting() {
-        return existing;
+    public boolean isRegistered() {
+        return registered;
     }
 
-    public void setExisting(boolean existing) {
-        this.existing = existing;
+    public void setRegistered(boolean registered) {
+        this.registered = registered;
     }
 
-    public Boolean getTemporary() {
-        return temporary;
+    public boolean isTemporary() {
+        return temporal;
     }
 
-    public void setTemporary(Boolean temporary) {
-        this.temporary = temporary;
+    public void setTemporary(boolean temporary) {
+        this.temporal = temporary;
     }
 
     @Override
     public String toString() {
         return "CityRegisterCheckerResponse{" +
-                "existing=" + existing +
-                ", temporary=" + temporary +
+                "existing=" + registered +
+                ", temporary=" + temporal +
                 '}';
     }
 }

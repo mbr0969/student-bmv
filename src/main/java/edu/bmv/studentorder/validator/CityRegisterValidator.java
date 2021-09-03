@@ -8,8 +8,8 @@ import edu.bmv.studentorder.domain.register.CityRegisterResponse;
 import edu.bmv.studentorder.domain.StudentOrder;
 import edu.bmv.studentorder.exception.CityRegisterException;
 import edu.bmv.studentorder.exception.TransportException;
-import edu.bmv.studentorder.validator.register.FakeCityRegisterChecker;
 import edu.bmv.studentorder.validator.register.ICityRegisterChecker;
+import edu.bmv.studentorder.validator.register.RealCityRegisterChecker;
 
 public class CityRegisterValidator {
     public static final  String IN_CODE = "NO GRN";
@@ -18,7 +18,7 @@ public class CityRegisterValidator {
     private ICityRegisterChecker personChecker;
 
     public CityRegisterValidator() {
-        personChecker = new FakeCityRegisterChecker();
+        personChecker = new RealCityRegisterChecker();
     }
 
     public AnswerCityRegister checkCityRegister(StudentOrder so)  {
@@ -38,7 +38,7 @@ public class CityRegisterValidator {
 
         try{
             CityRegisterResponse tmp = personChecker.checkPerson(person);
-            status = tmp.isExisting() ?  AnswerCityRegisterItem.CityStatus.YES : AnswerCityRegisterItem.CityStatus.NO;
+            status = tmp.isRegistered() ?  AnswerCityRegisterItem.CityStatus.YES : AnswerCityRegisterItem.CityStatus.NO;
         }catch (CityRegisterException ex){
             error = new AnswerCityRegisterItem.CityError(ex.getCode(), ex.getMessage());
             status = AnswerCityRegisterItem.CityStatus.ERROR;

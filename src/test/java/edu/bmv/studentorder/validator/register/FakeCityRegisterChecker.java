@@ -27,12 +27,12 @@ public class FakeCityRegisterChecker  implements ICityRegisterChecker {
 
 
             if(t.getPassportSeria().equals(GOOD_1) || t.getPassportSeria().equals(GOOD_2)){
-                res.setExisting(true);
+                res.setRegistered(true);
                 res.setTemporary(false);
             }
 
             if(t.getPassportSeria().equals(BAD_1) || t.getPassportSeria().equals(BAD_2)){
-                res.setExisting(false);
+                res.setRegistered(false);
             }
 
             if(t.getPassportSeria().equals(ERROR_1) || t.getPassportSeria().equals(ERROR_2)){
@@ -47,7 +47,7 @@ public class FakeCityRegisterChecker  implements ICityRegisterChecker {
         }
 
         if(Person instanceof Child){
-            res.setExisting(true);
+            res.setRegistered(true);
             res.setTemporary(true);
         }
 
