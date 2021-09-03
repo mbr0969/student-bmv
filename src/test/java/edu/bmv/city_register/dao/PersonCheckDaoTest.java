@@ -1,5 +1,4 @@
 package edu.bmv.city_register.dao;
-
 import edu.bmv.city_register.domaim.PersonRequest;
 import edu.bmv.city_register.domaim.PersonResponse;
 import edu.bmv.city_register.exception.PersonCheckException;

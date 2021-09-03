@@ -58,9 +58,5 @@ public class CheckPersonServlet extends HttpServlet {
         } catch (PersonCheckException e) {
             e.printStackTrace();
         }
-
-
-
-
     }
 }

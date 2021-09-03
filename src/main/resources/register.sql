@@ -17,6 +17,7 @@ CREATE TABLE cr_district(
     PRIMARY KEY (district_code)
 );
 
+
 INSERT INTO cr_district (district_code, district_name)
 VALUES (1, 'Адимралтейский');
 VALUES (2, 'Василиостровский');
